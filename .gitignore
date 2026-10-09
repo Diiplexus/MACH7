@@ -1,0 +1,16 @@
+# Binaries
+/mach7
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# macOS files
+.DS_Store
