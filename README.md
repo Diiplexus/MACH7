@@ -121,10 +121,11 @@ go build -o mach7 ./cmd/mach7
 
 ## 🍺 Homebrew
 
-Pushing a version tag (for example, `v0.1.0`) triggers a GitHub Actions release for Intel and Apple Silicon and updates the Homebrew formula. Once the first release is published, install MACH7 with:
+Pushing a version tag (for example, `v0.1.0`) triggers a GitHub Actions release for Intel and Apple Silicon and updates the Homebrew formula. Because the formula lives in this repository (not in a `homebrew-*` repository), tap it with its explicit URL, then install:
 
 ```bash
-brew install Diiplexus/MACH7/mach7
+brew tap diiplexus/mach7 https://github.com/Diiplexus/MACH7.git
+brew install diiplexus/mach7/mach7
 ```
 
 Tagged releases build macOS binaries for Intel (`amd64`) and Apple Silicon (`arm64`) and update the Homebrew formula in `Formula/`.
