@@ -125,7 +125,20 @@ Pushing a version tag (for example, `v0.1.0`) triggers a GitHub Actions release 
 
 ```bash
 brew tap diiplexus/mach7 https://github.com/Diiplexus/MACH7.git
-brew install diiplexus/mach7/mach7
+brew trust diiplexus/mach7
+brew install mach7
 ```
 
+Recent Homebrew versions refuse to load formulae from third-party taps until you trust them, which is what `brew trust` does.
+
 Tagged releases build macOS binaries for Intel (`amd64`) and Apple Silicon (`arm64`) and update the Homebrew formula in `Formula/`.
+
+---
+
+## ⚖️ License & Disclaimer
+
+MACH7 is released under the [MIT License](LICENSE).
+
+MACH7 modifies macOS preferences, restarts Dock and Finder, and sends signals to system daemons. It is provided "as is", without warranty of any kind, and you use it at your own risk. Snapshots are created before changes made from the TUI, but headless CLI commands do not create them.
+
+Apple, macOS, Intel, and Neovim are trademarks of their respective owners. MACH7 is an independent project and is not affiliated with or endorsed by them.

@@ -19,6 +19,7 @@ archives:
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     files:
       - README.md
+      - LICENSE
 
 checksum:
   name_template: checksums.txt
@@ -31,6 +32,7 @@ brews:
       token: "{{ .Env.GITHUB_TOKEN }}"
     directory: Formula
     homepage: https://github.com/Diiplexus/MACH7
+    license: MIT
     description: macOS system tuning, telemetry, and benchmark TUI
     install: |
       bin.install "mach7"
