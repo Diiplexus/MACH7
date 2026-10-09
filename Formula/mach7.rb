@@ -5,20 +5,21 @@
 class Mach7 < Formula
   desc "macOS system tuning, telemetry, and benchmark TUI"
   homepage "https://github.com/Diiplexus/MACH7"
-  version "0.1.0"
+  version "0.1.1"
+  license "MIT"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/Diiplexus/MACH7/releases/download/v0.1.0/mach7_0.1.0_darwin_amd64.tar.gz"
-    sha256 "b3f8ecdafd9c32712a267894c113b4eb84200d01b170397381d21c020507c91a"
+    url "https://github.com/Diiplexus/MACH7/releases/download/v0.1.1/mach7_0.1.1_darwin_amd64.tar.gz"
+    sha256 "78b2f0ebdcdc277a0cadcd4fd1d5f7bb6bdfb6094a3ca9b47ce67f052c506e0e"
 
     define_method(:install) do
       bin.install "mach7"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/Diiplexus/MACH7/releases/download/v0.1.0/mach7_0.1.0_darwin_arm64.tar.gz"
-    sha256 "2a40ceeab23a9669418f6809f4623c25da72d4543e3e628337e98f1c14ac083b"
+    url "https://github.com/Diiplexus/MACH7/releases/download/v0.1.1/mach7_0.1.1_darwin_arm64.tar.gz"
+    sha256 "a07053b5159f66f78bf6ea7d36d366b715d66c917051b7694de9f9b5018228be"
 
     define_method(:install) do
       bin.install "mach7"
