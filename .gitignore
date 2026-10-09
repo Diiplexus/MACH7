@@ -1,5 +1,6 @@
 # Binaries
-/mach7
+mach7
+/bin/
 *.exe
 *.exe~
 *.dll

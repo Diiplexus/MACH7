@@ -98,17 +98,33 @@ Use `mach7` directly in scripts, crons, or terminal shortcuts without launching 
 
 ---
 
-## 🛠️ Building From Source
+## 🛠️ Install from Source
 
-Requires **Go 1.22+**:
+Requires **Go 1.25+** and macOS. From the repository root, install the `mach7` executable into your Go binary directory:
 
 ```bash
-# Clone and enter the project directory
-cd "Performance MAC APP"
+go install ./cmd/mach7
+```
 
-# Compile executable
+Make sure `$(go env GOPATH)/bin` (or the directory configured by `GOBIN`) is on your `PATH`, then run:
+
+```bash
+mach7
+```
+
+To build a standalone executable in the current directory instead:
+
+```bash
 go build -o mach7 ./cmd/mach7
-
-# Run
 ./mach7
 ```
+
+## 🍺 Homebrew
+
+Pushing a version tag (for example, `v0.1.0`) triggers a GitHub Actions release for Intel and Apple Silicon and updates the Homebrew formula. Once the first release is published, install MACH7 with:
+
+```bash
+brew install Diiplexus/MACH7/mach7
+```
+
+Tagged releases build macOS binaries for Intel (`amd64`) and Apple Silicon (`arm64`) and update the Homebrew formula in `Formula/`.

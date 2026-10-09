@@ -1,0 +1,38 @@
+version: 2
+project_name: mach7
+
+builds:
+  - id: mach7
+    main: ./cmd/mach7
+    binary: mach7
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - formats:
+      - tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+
+checksum:
+  name_template: checksums.txt
+
+brews:
+  - repository:
+      owner: Diiplexus
+      name: MACH7
+      branch: main
+      token: "{{ .Env.GITHUB_TOKEN }}"
+    directory: Formula
+    homepage: https://github.com/Diiplexus/MACH7
+    description: macOS system tuning, telemetry, and benchmark TUI
+    install: |
+      bin.install "mach7"
+    test: |
+      system "#{bin}/mach7", "--help"
